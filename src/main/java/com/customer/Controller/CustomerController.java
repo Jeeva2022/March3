@@ -13,6 +13,11 @@ public class CustomerController {
     @Autowired
     CustomerService customerService;
 
+    @PostMapping("/hello")
+    public String Hello(){
+        return "Welcome to HomePage";
+    }
+
     @GetMapping(value = "/getCustomer/{id}")
     public Customer getCustomer(@PathVariable Long id){
         return customerService.getCustomer(id);
